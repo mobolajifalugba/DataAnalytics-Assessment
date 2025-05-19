@@ -1,8 +1,8 @@
 # DataAnalytics-Assessment
-Approach and Challenges to each business question
+## Approach and Challenges to each business questions
 
 1: High-Value Customers with Multiple Products
-Approach :
+### Approach :
 - JOINED the three tables on the owner_id (i.e. u.id = s.owner_id and u.id = p.owner_id) to relate savings and investment data to each user.
 - Filtered only users with funded savings (s.amount > 0) and funded investments (p.goal > 0).
 - Grouped the results by each user to: Savings_count, Investment_count, Total_deposits as the sum of all savings amount and plan goal.
