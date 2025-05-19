@@ -2,7 +2,7 @@ SELECT
     p.id AS plan_id,
     p.owner_id,       
     CASE 
-        WHEN p.plan_type_id = 1 THEN 'Savings'     
+        WHEN p.plan_type_id = 1 THEN 'Savings'         -- Categorize plan
         WHEN p.plan_type_id = 2 THEN 'Investment'
         ELSE 'Other'
     END AS type,
