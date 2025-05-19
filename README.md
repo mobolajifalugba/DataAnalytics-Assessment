@@ -12,6 +12,7 @@
 - Ambiguous Plan Types: It wasn't immediately clear which plans in plans_plan were savings vs investment. Assumed savings_savingsaccount represents actual savings, and plans_plan represents investment plans.
 
 
+
 2. Transaction Frequency Analysis
 ### Approach :
 - Joined users_customuser with savings_savingsaccount using owner_id.
@@ -26,6 +27,9 @@
 - Deciding on inflow vs. all transaction logic; Used all transactions for simplicity.
 - Handling users with no transactions (division by 0 risk).
 
+
+
+
 3. Account Inactivity Alert
 ### Approach :
 - Used plans_plan to get account metadata.
@@ -39,6 +43,10 @@
 - Accounts with no transactions ever returned NULL for last_transaction_date — handled via HAVING clause.
 - No separate inflow/outflow field — assumed any transaction implies activity.
 - Ensuring accurate status filtering (status_id = 1) for active accounts only.
+
+
+
+
 
 4. Customer Lifetime Value (CLV) Estimation
 ### Approach :
